@@ -1,6 +1,7 @@
 #ifndef DAY_H
 #define DAY_H
 #include <QWidget>
+#include <list>
 #include <vector>
 #include <activities.h>
 #include <QDate>
@@ -22,7 +23,13 @@ public:
 
     void addAttività(const Activities& nuovaAttività){
         toDayActivities.push_back(nuovaAttività);
-    }
+    }/*
+    Activities getActivity(const int i){
+        std::list<Activities> a = toDayActivities;
+        for(int j=0; j<i;j++)
+            a.pop_front();
+        return a.front();
+    }*/
     Activities getActivity(const int i){
         return toDayActivities[i];
     }
@@ -41,8 +48,9 @@ public:
     int getMonth(){ return data.month();}
     int getYear(){ return data.year();}
 
-public:
+private:
     QDate data;
+    //std::list<Activities> toDayActivities;
     std::vector<Activities> toDayActivities;
 };
 

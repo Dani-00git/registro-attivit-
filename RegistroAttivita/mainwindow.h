@@ -29,7 +29,7 @@ private:
     Ui::MainWindow *ui;
     QDate dataTmp;
     QLabel GG;
-    Day giornoTmp;
+    //Day giornoTmp;
     Activities activityTmp;
     registro registroPrincipale;
     int tmp;
